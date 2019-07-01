@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guess the word! | Puppies Edition</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand&display=swap" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Javascript, jQuery Bootstrap script -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</head>
+
+<body style="background-color: antiquewhite">
+    <div class="container-fluid" style="padding: 2vw;">
+        <!-- Logo -->
+        <div class="row">
+            <div class="col-10 offset-1 col-md-6 offset-md-3">
+                <img src="assets/images/logo.png" class="img-fluid w-100">
+            </div>
+        </div>
+        <!-- Main Game Display -->
+        <div class="row">
+            <div class="col-10 offset-1 col-md-8 offset-md-2" id="game-display">
+                <div class="row">
+                    <!-- Picture Panel -->
+                    <div class="col-xs-12 col-sm-5" id="pic-panel">
+                        <img src="assets/images/biker-puppy.jpg" class="img-fluid" id="word-image">
+                    </div>
+                    <!-- Word Panel -->
+                    <div class="col-sm-7">
+                        <p class="game-text" id="instructions"> Press any key to get started! </p>
+                        <br>
+                        <p class="game-text text" style="text-decoration: underline;"> Wins: </p>
+                        <p class="game-text text" id="win-counter"> 0 </p>
+                        <p class="game-text text word-text"> Current Word </p>
+                        <p class="game-text text" id="blanks"></p>
+                        <p class="game-text text" style="text-decoration: underline;"> Number of Guesses Remaining: </p>
+                        <p class="game-text text" id="guess-counter"> 0 </p>
+                        <p class="game-text text" style="text-decoration: underline;"> Letters Already Guessed: </p>
+                        <div class="game-text text" id="letter-bank"></div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>

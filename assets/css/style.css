@@ -1,0 +1,67 @@
+.game-text {
+    text-align: center;
+    word-wrap: break-word;
+    font-family: 'Just Another Hand', cursive;
+}
+
+.text {
+    font-size: 30px;
+}
+
+.win-text {}
+
+.word-text {
+    color: rgb(151, 151, 151);
+}
+
+#word-image {}
+
+#pic-panel {
+    border-right: 2px dotted black;
+}
+
+#game-display {
+    background-color: white;
+    width: 90vw;
+    padding-top: 5vh;
+    border: 2px solid rgb(207, 174, 90);
+    border-radius: 25px;
+}
+
+
+#instructions {
+    font-size: 40px;
+}
+
+#win-counter {
+    margin-bottom: 5px;
+    color: rgb(139, 226, 139);
+}
+
+#guess-counter {
+    margin-bottom: 10px;
+    color: rgb(48, 48, 252);
+}
+
+#blanks {
+    margin-bottom: 10px;
+}
+
+#letter-bank {
+    margin-bottom: 15px;
+    color: rgb(151, 151, 151);
+    font-size: 40px;
+
+
+}
+
+@media screen and (max-width:767px) {
+    #game-display {
+        margin-left: 7vw;
+    }
+}
+
+@media screen and (max-width:575.5px) {
+    #pic-panel {
+        border: none;
+    }
