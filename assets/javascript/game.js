@@ -3,6 +3,10 @@ var guesses, num_blanks;
 var revealed = [];
 var bank = [];
 var curr_word = "";
+var bark_audio = document.getElementById("bark");
+var defeat_audio = document.getElementById("defeat");
+var ding_audio = document.getElementById("ding");
+var incorrect_audio = document.getElementById("incorrect");
 
 // update win counter
 function updateWins() {
@@ -39,7 +43,7 @@ function printBlanks(word) {
         } else {
             elem.innerHTML += "__";
         }
-        
+
         !(i === word.length - 1) ? elem.innerHTML += '\xa0': ''
     }
 
@@ -49,6 +53,8 @@ function revealLetters(word, letter) {
     var elem = document.getElementById('blanks');
     elem.innerHTML = "";
     revealed.push(letter);
+    // Play Ding
+    ding_audio.play();
 
     for (var i = 0; i < word.length; i++) {
         if (revealed.includes(word[i]) && word[i] !== " ") {
@@ -72,6 +78,7 @@ function addToBank(letter) {
     bank.push(letter);
     guesses--;
     updateGuesses();
+    incorrect_audio.play();
 }
 
 function resetBank() {
@@ -90,12 +97,15 @@ function changeImage(newSrc) {
 var puppy_words = ["corgi", "pug", "beagle", "husky", "chow chow", "golden retriever", "poodle", "french bulldog", "border collie"];
 
 document.onkeyup = function (event) {
+
+
+
     // Set a new word if one does not already exist or all blanks have been filled
     if (curr_word === "" || num_blanks === 0) {
         curr_word = newRandomWord(puppy_words);
         num_blanks = curr_word.length;
         printBlanks(curr_word);
-        guesses = curr_word.length * 2;
+        guesses = Math.ceil(curr_word.length * 1.2);
         updateGuesses();
         revealed = [];
         bank = [];
@@ -110,12 +120,16 @@ document.onkeyup = function (event) {
     if (num_blanks === 0 && guesses !== 0) {
         //Display Victory Messaage
         displayMessage(curr_word, true);
+        // Play Bark
+        bark_audio.play();
         updateWins();
         changeImage("assets/images/" + curr_word + ".jpg");
     } else if (guesses === 0) {
         //Display Defeat Message
         displayMessage(curr_word, false);
         changeImage("assets/images/" + curr_word + ".jpg");
+        // Play Defeat Sound
+        defeat_audio.play();
     }
 
 
